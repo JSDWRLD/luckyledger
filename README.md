@@ -1,7 +1,3 @@
-Here’s a simple **`README.md`** template for your project. You can copy and paste this directly into your GitHub repository. Feel free to modify the content based on your specific needs!
-
----
-
 # Ethereum Lottery DApp
 
 A decentralized lottery application built on Ethereum using **Solidity**, **React**, **Tailwind CSS**, and **Web3.js**. Users can enter a lottery by purchasing tickets, and a random winner is drawn once the raffle ends.
