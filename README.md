@@ -13,8 +13,8 @@ A decentralized lottery application built on Ethereum using **Solidity**, **Reac
 
 ### Prerequisites
 
-- **Node.js** (v14 or higher)
-- **npm** (v6 or higher)
+- **Node.js** 
+- **npm** 
 - **Ganache** (for local Ethereum testing, optional for development)
 - **Truffle** (if you're using Truffle to deploy your contracts)
 
