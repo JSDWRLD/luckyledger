@@ -1,6 +1,6 @@
 # Ethereum Lottery DApp
 
-A decentralized lottery application built on Ethereum using **Solidity**, **React**, **Tailwind CSS**, and **Web3.js**. Users can enter a lottery by purchasing tickets, and a random winner is drawn once the raffle ends.
+A decentralized lottery application built on Ethereum using **Solidity**, **Javascript**, **Tailwind CSS**, and **Web3.js**. Users can enter a lottery by purchasing tickets, and a random winner is drawn once the raffle ends.
 
 ## Features
 
