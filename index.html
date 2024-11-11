@@ -11,11 +11,21 @@
   <!-- Navbar for tha top -->
   <header class="w-full block p-4 bg-darkGreen text-white">
     <div class="flex justify-between items-center">
-      <button class="hamburger-menu p-2">
+      <div class="relative inline-block">
+      <button class="hamburger-menu p-2" id ="hamButton">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
+        <!--Dropdown for Hamburger Menu (Don't know what we want in here but we can change it later)-->
+        <div
+          id="dropdownMenu" class="dropdown hidden absolute bg-darkGreen text-white rounded-lg shadow-lg mt-2">
+          <a href="/host-raffle" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen">Host a Raffle</a>
+          <a href="/about" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen">About Us</a>
+          <a href="/my-raffles" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen">My Raffles</a>
+        </div>
+      </div>
+    
       <img src="fulllogo.png" alt="Company Logo" class="logo mx-auto"> 
       <div class="flex items-center space-x-4">
         <button class="host-raffle-btn bg-gold text-darkGreen px-4 py-2 rounded-lg font-semibold">Host Raffle</button>
