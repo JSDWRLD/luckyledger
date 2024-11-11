@@ -1,13 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LuckyLedger</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuckyLedger Lottery</title>
+  <link href="./src/style.css" rel="stylesheet">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="bg-darkGray"> 
+  <!-- Navbar for tha top -->
+  <header class="w-full block p-4 bg-darkGreen text-white">
+    <div class="flex justify-between items-center">
+      <button class="hamburger-menu p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <img src="fulllogo.png" alt="Company Logo" class="logo mx-auto"> 
+      <div class="flex items-center space-x-4">
+        <button class="host-raffle-btn bg-gold text-darkGreen px-4 py-2 rounded-lg font-semibold">Host Raffle</button>
+        <button class="user-icon p-2">
+          <!-- User ICON we can swap with SVG's online -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 19a2 2 0 002 2h9.758a2 2 0 002-2V17c0-2.414-2.686-4-5-4s-5 1.586-5 4v2z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11a4 4 0 100-8 4 4 0 000 8z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Raffle areaa -->
+  <main class="mt-8 max-w-2xl mx-auto block">
+    <!-- Biggest pot -->
+    <section class="biggest-raffle-card bg-darkGreen p-8 rounded-lg shadow-lg text-white text-center border-4 border-gold">
+      <h2 class="text-2xl font-semibold text-gold mb-4">Current Jackpot</h2>
+      <div class="text-lg font-bold">Prize: 5 ETH</div>
+      <div class="text-sm mb-4">Time Remaining: 01:23:45</div>
+      <div class="text-sm mb-4">Max Tickets: 5 per user</div>
+      <button class="buy-ticket-btn bg-gold text-darkGreen w-full py-2 rounded-lg font-semibold">Buy Ticket</button>
+      <div class="text-sm mt-2">Price per Ticket: 0.1 ETH</div>
+      <div class="text-sm">Tickets Bought: 45</div>
+    </section>
+
+    <!-- other pots, later we would make dynamic w js -->
+    <section class="other-raffles mt-8 grid grid-cols-1 gap-6">
+      <div class="raffle-card bg-darkGreen p-6 rounded-lg shadow-lg text-white text-center border-4 border-gold">
+        <h3 class="text-lg font-semibold text-gold mb-2">Prize: 1 ETH</h3>
+        <div class="text-sm mb-2">Time Remaining: 00:30:15</div>
+        <div class="text-sm mb-2">Max Tickets: 3 per user</div>
+        <button class="buy-ticket-btn bg-gold text-darkGreen w-full py-2 rounded-lg font-semibold">Buy Ticket</button>
+        <div class="text-sm mt-2">Price per Ticket: 0.05 ETH</div>
+        <div class="text-sm">Tickets Bought: 20</div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
