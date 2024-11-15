@@ -7,30 +7,26 @@
   <link href="./src/style.css" rel="stylesheet">
   <script type="module" src="/src/main.js"></script>
 </head>
-<body class="bg-darkGray"> 
-  <!-- Navbar for tha top -->
-  <header class="w-full block p-4 bg-darkGreen text-white">
-    <div class="flex justify-between items-center">
+<body class="bg-darkGray flex flex-col items-center">
+  <header class="w-full block p-6 bg-darkGreen text-white shadow-md">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <!-- Dropdown and Hamburger Menu -->
       <div class="relative inline-block">
-      <button class="hamburger-menu p-2" id ="hamButton">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-        <!--Dropdown for Hamburger Menu (Don't know what we want in here but we can change it later)-->
-        <div
-          id="dropdownMenu" class="dropdown hidden absolute bg-darkGreen text-white rounded-lg shadow-lg mt-2">
-          <a href="/host-raffle" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen">Host a Raffle</a>
-          <a href="/about" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen">About Us</a>
-          <a href="/my-raffles" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen">My Raffles</a>
+        <button class="hamburger-menu p-2 hover:bg-gold rounded-md" id="hamButton">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <div id="dropdownMenu" class="dropdown hidden absolute bg-darkGreen text-white rounded-lg shadow-lg mt-2 z-10">
+          <a href="/host-raffle" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">Host a Raffle</a>
+          <a href="/about" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">About Us</a>
+          <a href="/my-raffles" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">My Raffles</a>
         </div>
       </div>
-    
-      <img src="fulllogo.png" alt="Company Logo" class="logo mx-auto"> 
+      <img src="fulllogo.png" alt="Company Logo" class="logo mx-auto transition-transform duration-300 transform hover:scale-105">
       <div class="flex items-center space-x-4">
-        <button class="host-raffle-btn bg-gold text-darkGreen px-4 py-2 rounded-lg font-semibold">Host Raffle</button>
-        <button class="user-icon p-2">
-          <!-- User ICON we can swap with SVG's online -->
+        <button class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-white hover:text-gold">View Raffles</button>
+        <button class="user-icon p-2 rounded-md hover:bg-gold">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 19a2 2 0 002 2h9.758a2 2 0 002-2V17c0-2.414-2.686-4-5-4s-5 1.586-5 4v2z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11a4 4 0 100-8 4 4 0 000 8z"></path>
@@ -39,30 +35,44 @@
       </div>
     </div>
   </header>
-
-  <!-- Raffle areaa -->
-  <main class="mt-8 max-w-2xl mx-auto block">
-    <!-- Biggest pot -->
-    <section class="biggest-raffle-card bg-darkGreen p-8 rounded-lg shadow-lg text-white text-center border-4 border-gold">
-      <h2 class="text-2xl font-semibold text-gold mb-4">Current Jackpot</h2>
-      <div class="text-lg font-bold">Prize: 5 ETH</div>
-      <div class="text-sm mb-4">Time Remaining: 01:23:45</div>
-      <div class="text-sm mb-4">Max Tickets: 5 per user</div>
-      <button class="buy-ticket-btn bg-gold text-darkGreen w-full py-2 rounded-lg font-semibold">Buy Ticket</button>
-      <div class="text-sm mt-2">Price per Ticket: 0.1 ETH</div>
-      <div class="text-sm">Tickets Bought: 45</div>
+  
+  <main class="mt-8 max-w-3xl mx-auto block p-4">
+    <!-- Biggest Reward Title -->
+    <div class="flex items-center justify-between text-gold text-lg font-semibold mb-4">
+      <div class="border-t border-gold w-1/5"></div>
+      <span class="text-2xl w-full text-center font-bold animate-pulse">Biggest Reward</span>
+      <div class="border-t border-gold w-1/5"></div>
+    </div>
+  
+    <!-- Current Jackpot Section -->
+    <section class="biggest-raffle-card bg-gradient-to-r from-gold to-yellow-500 p-10 rounded-lg shadow-lg text-darkGray text-center border-4 border-gold mb-10 transform scale-105 transition-transform duration-500 hover:scale-110">
+      <h2 class="text-4xl font-extrabold mb-6">💸 Current Jackpot 💸</h2>
+      <div class="text-2xl font-extrabold mb-3">Prize: <span class="text-gold">5 ETH</span></div>
+      <div class="text-lg font-medium mb-4">Time Remaining: <span class="font-bold">01:23:45</span></div>
+      <div class="text-lg font-medium mb-6">Max Tickets: 5 per user</div>
+      <button class="buy-ticket-btn bg-darkGreen text-gold w-full py-4 text-xl rounded-full font-extrabold shadow-lg hover:bg-white hover:text-darkGreen transition-all duration-300">Buy Ticket</button>
+      <div class="text-lg mt-4 font-semibold">Price per Ticket: 0.1 ETH</div>
+      <div class="text-lg font-semibold">Tickets Bought: 45</div>
     </section>
-
-    <!-- other pots, later we would make dynamic w js -->
-    <section class="other-raffles mt-8 grid grid-cols-1 gap-6">
+  
+    <!-- Other Raffles Title -->
+    <div class="flex items-center justify-between text-gold text-lg font-semibold mt-8 mb-2">
+      <div class="border-t border-gold w-1/5"></div>
+      <span>Other Raffles</span>
+      <div class="border-t border-gold w-1/5"></div>
+    </div>
+  
+    <!-- Other Raffles Section -->
+    <section class="other-raffles grid grid-cols-1 gap-6">
       <div class="raffle-card bg-darkGreen p-6 rounded-lg shadow-lg text-white text-center border-4 border-gold">
-        <h3 class="text-lg font-semibold text-gold mb-2">Prize: 1 ETH</h3>
+        <h3 class="text-xl font-semibold text-gold mb-2">Prize: 1 ETH</h3>
         <div class="text-sm mb-2">Time Remaining: 00:30:15</div>
         <div class="text-sm mb-2">Max Tickets: 3 per user</div>
-        <button class="buy-ticket-btn bg-gold text-darkGreen w-full py-2 rounded-lg font-semibold">Buy Ticket</button>
+        <button class="buy-ticket-btn bg-gold text-darkGreen w-full py-2 rounded-lg font-semibold shadow-md hover:bg-white hover:text-gold">Buy Ticket</button>
         <div class="text-sm mt-2">Price per Ticket: 0.05 ETH</div>
         <div class="text-sm">Tickets Bought: 20</div>
       </div>
+      <!-- Additional raffles can be added here in the same format -->
     </section>
   </main>
 </body>

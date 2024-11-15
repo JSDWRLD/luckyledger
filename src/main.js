@@ -15,6 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
     setupDropdown(toggleButton, dropdownMenu);
 });
 
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY) {
+    header.classList.add('hide'); // Hide header on scroll down
+  } else {
+    header.classList.remove('hide'); // Show header on scroll up
+  }
+  lastScrollY = window.scrollY;
+});
+
+
 
 setupCounter(document.querySelector('#counter'));
 
