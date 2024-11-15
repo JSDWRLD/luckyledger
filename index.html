@@ -44,15 +44,16 @@
       <div class="border-t border-gold w-1/5"></div>
     </div>
   
-    <!-- Current Jackpot Section -->
+    <!-- Biggest Jackpot Section -->
     <section class="biggest-raffle-card bg-gradient-to-r from-gold to-yellow-500 p-10 rounded-lg shadow-lg text-darkGray text-center border-4 border-gold mb-10 transform scale-105 transition-transform duration-500 hover:scale-110">
+      <!-- Content will be populated dynamically by main.js -->
       <h2 class="text-4xl font-extrabold mb-6">💸 Current Jackpot 💸</h2>
-      <div class="text-2xl font-extrabold mb-3">Prize: <span class="text-white">5 ETH</span></div>
-      <div class="text-lg font-medium mb-4">Time Remaining: <span class="font-bold">01:23:45</span></div>
-      <div class="text-lg font-medium mb-6">Max Tickets: 5 per user</div>
-      <button class="buy-ticket-btn bg-darkGreen text-gold w-full py-4 text-xl rounded-full font-extrabold shadow-lg hover:bg-white hover:text-darkGreen transition-all duration-300">Buy Ticket</button>
-      <div class="text-lg mt-4 font-semibold">Price per Ticket: 0.1 ETH</div>
-      <div class="text-lg font-semibold">Tickets Bought: 45</div>
+      <div class="text-2xl font-extrabold mb-3">Prize: <span class="text-white">None</span></div>
+      <div class="text-lg font-medium mb-4">Time Remaining: N/A</div>
+      <div class="text-lg font-medium mb-6">Max Tickets: N/A</div>
+      <button class="bg-gray-500 text-white w-full py-4 text-xl rounded-full font-extrabold shadow-lg cursor-not-allowed" disabled>Buy Ticket</button>
+      <div class="text-lg mt-4 font-semibold">Price per Ticket: N/A</div>
+      <div class="text-lg font-semibold">Tickets Bought: 0</div>
     </section>
   
     <!-- Other Raffles Title -->
@@ -64,15 +65,15 @@
   
     <!-- Other Raffles Section -->
     <section class="other-raffles grid grid-cols-1 gap-6">
-      <div class="raffle-card bg-darkGreen p-6 rounded-lg shadow-lg text-white text-center border-4 border-gold">
-        <h3 class="text-xl font-semibold text-gold mb-2">Prize: 1 ETH</h3>
-        <div class="text-sm mb-2">Time Remaining: 00:30:15</div>
-        <div class="text-sm mb-2">Max Tickets: 3 per user</div>
-        <button class="buy-ticket-btn bg-gold text-darkGreen w-full py-2 rounded-lg font-semibold shadow-md hover:bg-white hover:text-gold">Buy Ticket</button>
-        <div class="text-sm mt-2">Price per Ticket: 0.05 ETH</div>
-        <div class="text-sm">Tickets Bought: 20</div>
-      </div>
-      <!-- Additional raffles can be added here in the same format -->
+      <!-- Content will be dynamically generated in main.js -->
+      <p class="text-white">No raffles available at the moment.</p>
+    </section>
+
+    <!-- Raffle Creation Section -->
+    <section class="create-raffle-section mt-10">
+      <input id="entryFeeInput" type="number" placeholder="Entry Fee (ETH)" class="p-2 border-2 border-gold rounded-md mb-2 text-darkGray">
+      <input id="durationInput" type="number" placeholder="Duration (seconds)" class="p-2 border-2 border-gold rounded-md mb-4 text-darkGray">
+      <button id="createRaffleButton" class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md">Create Raffle</button>
     </section>
   </main>
 </body>
