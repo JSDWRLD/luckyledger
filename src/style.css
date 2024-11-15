@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global */
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -10,7 +9,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Clickable Link Styles */
 a {
   @apply font-semibold text-gold;
 }
@@ -18,23 +16,39 @@ a:hover {
   @apply text-darkGreen;
 }
 
-/* Body/App Container Styles */
+/* Reset default margins and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the header */
+header {
+  position: fixed; /* Keep header fixed at the top */
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  transition: transform 0.3s ease; /* Smooth transition when hiding */
+}
+
+header.hide {
+  transform: translateY(-100%); /* Moves header out of view */
+}
+
+main {
+  margin-top: 6rem; /* Adjust based on header height */
+}
+
 body {
-  @apply m-0 items-center justify-center min-h-screen min-w-[320px] bg-darkGray text-white font-sans antialiased;
+  @apply m-0 items-center justify-center min-h-screen bg-darkGray text-white font-sans antialiased;
 }
 
 .bg-darkGray {
-  background-color: #333333; /* Dark Gray */
+  background-color: #333333;
 }
 
-/* Main container */
-#app {
-  @apply max-w-[1280px] mx-auto p-8 text-center;
-}
-
-/* Button Styles */
 button {
-  @apply rounded-lg border border-transparent px-4 py-2 font-semibold text-white transition-colors duration-200;
+  @apply rounded-lg px-4 py-2 font-semibold transition-colors duration-300;
 }
 button:hover {
   @apply bg-gold text-darkGreen;
@@ -44,26 +58,13 @@ button:focus-visible {
   @apply outline-none ring-4 ring-offset-2 ring-gold;
 }
 
-/* Logo Styles, FIX */
 .logo {
-  @apply h-24 py-6 transition-transform duration-300;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em rgba(196, 181, 129, 0.6));
+  @apply h-20 transition-transform duration-300 transform hover:scale-105;
 }
 
-/* Styles for Other Raffles Section */
-.other-raffles {
-  @apply bg-darkGray p-6 rounded-lg;
+.biggest-raffle-card {
+  @apply bg-darkGreen p-8 rounded-lg shadow-lg text-white border-4 border-gold;
 }
-
-/* Styles for Raffle Cards */
-.raffle-card {
-  @apply bg-darkGreen p-6 rounded-lg shadow-lg text-white text-center border-4 border-gold;
-}
-.hidden{
-  display: none;
-}
-.visible{
-  display: block;
+.other-raffles .raffle-card {
+  @apply bg-darkGreen p-6 rounded-lg shadow-lg text-white border-4 border-gold;
 }
