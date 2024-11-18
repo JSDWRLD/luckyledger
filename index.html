@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link href="./src/style.css" rel="stylesheet">
   <script type="module" src="/src/main.js"></script>
 </head>
+
 <body class="bg-darkGray flex flex-col items-center">
   <header class="w-full block p-6 bg-darkGreen text-white shadow-md">
     <div class="flex justify-between items-center max-w-6xl mx-auto">
@@ -18,24 +20,31 @@
           </svg>
         </button>
         <div id="dropdownMenu" class="dropdown hidden absolute bg-darkGreen text-white rounded-lg shadow-lg mt-2 z-10">
-          <a href="/host-raffle" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">Host a Raffle</a>
+          <a href="/host-raffle" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">Host a
+            Raffle</a>
           <a href="/about" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">About Us</a>
-          <a href="/my-raffles" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">My Raffles</a>
+          <a href="/my-raffles" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">My
+            Raffles</a>
         </div>
       </div>
-      <img src="fulllogo.png" alt="Company Logo" class="logo mx-auto transition-transform duration-300 transform hover:scale-105">
+      <img src="fulllogo.png" alt="Company Logo"
+        class="logo mx-auto transition-transform duration-300 transform hover:scale-105">
       <div class="flex items-center space-x-4">
-        <button class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-white hover:text-gold">View Raffles</button>
+        <button
+          class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-white hover:text-gold">View
+          Raffles</button>
         <button class="user-icon p-2 rounded-md hover:bg-gold">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 19a2 2 0 002 2h9.758a2 2 0 002-2V17c0-2.414-2.686-4-5-4s-5 1.586-5 4v2z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11a4 4 0 100-8 4 4 0 000 8z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5.121 19a2 2 0 002 2h9.758a2 2 0 002-2V17c0-2.414-2.686-4-5-4s-5 1.586-5 4v2z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11a4 4 0 100-8 4 4 0 000 8z">
+            </path>
           </svg>
         </button>
       </div>
     </div>
   </header>
-  
+
   <main class="mt-8 max-w-3xl mx-auto block p-4">
     <!-- Biggest Reward Title -->
     <div class="flex items-center justify-between text-gold text-lg font-semibold mb-4">
@@ -43,38 +52,80 @@
       <span class="text-2xl w-full text-center font-bold animate-pulse">Biggest Reward</span>
       <div class="border-t border-gold w-1/5"></div>
     </div>
-  
+
     <!-- Biggest Jackpot Section -->
-    <section class="biggest-raffle-card bg-gradient-to-r from-gold to-yellow-500 p-10 rounded-lg shadow-lg text-darkGray text-center border-4 border-gold mb-10 transform scale-105 transition-transform duration-500 hover:scale-110">
+    <section
+      class="biggest-raffle-card bg-gradient-to-r from-gold to-yellow-500 p-10 rounded-lg shadow-lg text-darkGray text-center border-4 border-gold mb-10 transform scale-105 transition-transform duration-500 hover:scale-110">
       <!-- Content will be populated dynamically by main.js -->
+      <!-- Winner Announcement Modal -->
+      <div id="winnerModal" class="fixed inset-0 flex items-center justify-center bg-darkGray bg-opacity-50 hidden">
+        <div class="bg-white text-darkGray p-6 rounded-lg shadow-lg w-80">
+          <h2 class="text-2xl font-bold text-center mb-4">Raffle Ended!</h2>
+          <p class="text-center mb-4">The winner is: <span id="winnerAddress" class="font-bold text-gold"></span></p>
+          <button id="closeWinnerModalButton"
+            class="px-4 py-2 bg-gold text-darkGreen rounded-md font-semibold shadow-md">
+            Close
+          </button>
+        </div>
+      </div>
+
       <h2 class="text-4xl font-extrabold mb-6">💸 Current Jackpot 💸</h2>
       <div class="text-2xl font-extrabold mb-3">Prize: <span class="text-white">None</span></div>
       <div class="text-lg font-medium mb-4">Time Remaining: N/A</div>
       <div class="text-lg font-medium mb-6">Max Tickets: N/A</div>
-      <button class="bg-gray-500 text-white w-full py-4 text-xl rounded-full font-extrabold shadow-lg cursor-not-allowed" disabled>Buy Ticket</button>
+      <button
+        class="bg-gray-500 text-white w-full py-4 text-xl rounded-full font-extrabold shadow-lg cursor-not-allowed"
+        disabled>Buy Ticket</button>
       <div class="text-lg mt-4 font-semibold">Price per Ticket: N/A</div>
       <div class="text-lg font-semibold">Tickets Bought: 0</div>
+      <button class="end-raffle-btn bg-red-800 text-white w-full py-2 rounded-lg font-semibold shadow-md mt-2"
+        data-raffle-id="${raffleId}">
+        End Raffle
+      </button>
     </section>
-  
+
     <!-- Other Raffles Title -->
     <div class="flex items-center justify-between text-gold text-lg font-semibold mt-8 mb-2">
       <div class="border-t border-gold w-1/5"></div>
       <span>Other Raffles</span>
       <div class="border-t border-gold w-1/5"></div>
     </div>
-  
+
     <!-- Other Raffles Section -->
     <section class="other-raffles grid grid-cols-1 gap-6">
       <!-- Content will be dynamically generated in main.js -->
       <p class="text-white">No raffles available at the moment.</p>
     </section>
 
-    <!-- Raffle Creation Section -->
     <section class="create-raffle-section mt-10">
-      <input id="entryFeeInput" type="number" placeholder="Entry Fee (ETH)" class="p-2 border-2 border-gold rounded-md mb-2 text-darkGray">
-      <input id="durationInput" type="number" placeholder="Duration (seconds)" class="p-2 border-2 border-gold rounded-md mb-4 text-darkGray">
-      <button id="createRaffleButton" class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md">Create Raffle</button>
+      <button id="openCreateRaffleModalButton"
+        class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md">
+        Create Raffle
+      </button>
+
+      <!-- Create Raffle Modal -->
+      <div id="createRaffleModal"
+        class="fixed inset-0 flex items-center justify-center bg-darkGray bg-opacity-50 hidden">
+        <div class="bg-white text-darkGray p-6 rounded-lg shadow-lg w-80">
+          <h2 class="text-2xl font-bold text-center mb-4">Create New Raffle</h2>
+          <div class="space-y-3">
+            <input id="entryFeeInput" type="number" placeholder="Entry Fee (ETH)"
+              class="w-full p-2 border-2 border-gold rounded-md text-darkGray">
+            <input id="durationInput" type="number" placeholder="Duration (seconds)"
+              class="w-full p-2 border-2 border-gold rounded-md text-darkGray">
+            <input id="maxTicketsInput" type="number" placeholder="Max Tickets per User"
+              class="w-full p-2 border-2 border-gold rounded-md text-darkGray">
+          </div>
+          <div class="flex justify-between mt-6">
+            <button id="closeCreateRaffleModalButton"
+              class="px-4 py-2 bg-gray-400 rounded-md font-semibold hover:bg-gray-500">Cancel</button>
+            <button id="createRaffleButton"
+              class="px-4 py-2 bg-gold text-darkGreen rounded-md font-semibold shadow-md">Create</button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </body>
+
 </html>
