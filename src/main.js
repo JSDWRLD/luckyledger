@@ -87,6 +87,14 @@ async function loadRaffles() {
 }
 
 function displayRaffle(raffleId, raffle) {
+  //repurposed from calculateTime function. 
+  const now = Date.now();
+  const endTimeMs = raffle.deadline * 1000; 
+  
+  // Check if the raffle has expired
+  if (endTimeMs <= now) {
+    return; //stops displaying raffle
+  }
   const rafflesContainer = document.querySelector(".other-raffles");
   const raffleCard = document.createElement("div");
   raffleCard.className = "raffle-card bg-darkGreen p-6 rounded-lg shadow-lg text-white text-center border-4 border-gold";
@@ -101,11 +109,11 @@ function displayRaffle(raffleId, raffle) {
 }
 
 function calculateTimeRemaining(endTime) {
-  const currentTime = Date.now();
-  const timeRemaining = BigInt(endTime) - BigInt(currentTime);
+  const currentTime = Date.now(); // current time in ms 
+  const timeRemaining = (endTime * 1000)- currentTime; //convert seconds to ms. Idk why bigInt wasn't working before.
 
-  if (timeRemaining > 0n) {
-    const seconds = Number(timeRemaining / 1000n);
+  if (timeRemaining > 0) {
+    const seconds = Math.floor(timeRemaining / 1000);
     const days = Math.floor(seconds / 86400);
     const hours = Math.floor((seconds % 86400) / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
@@ -114,8 +122,9 @@ function calculateTimeRemaining(endTime) {
     return `${days}d ${hours}h ${minutes}m ${secs}s`;
   }
 
-  return "0d 0h 0m 0s";
+  return "Expired";
 }
+
 
 function updateTimeRemaining() {
   document.querySelectorAll('.time-remaining').forEach(span => {
