@@ -56,7 +56,7 @@ This will open your app at `http://localhost:3000`.
 If you're running **Ganache** locally for Ethereum simulation, start it using the following command:
 
 ```bash
-ganache-cli -m "six radar life middle supply morning idle jeans picture room put effort" -p 7545
+ganache-cli -m "unable aspect worth unit unable giraffe sure blouse absurd kick shield mom" -p 8545
 ```
 
 This will start Ganache with the same mnemonic each time to ensure your wallets are consistent.
