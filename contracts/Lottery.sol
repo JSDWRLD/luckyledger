@@ -18,7 +18,7 @@ contract Lottery {
     uint256 public raffleCount; // Counter for raffle IDs
 
     // Maximum amount a user can spend on tickets (0.1 ETH)
-    uint256 constant MAX_TICKET_PURCHASE = 0.1 ether;
+    uint256 constant MAX_TICKET_PURCHASE = 10 ether;
 
     // A fee percentage the host takes as profit (e.g., 5%)
     uint256 constant HOST_FEE_PERCENTAGE = 5;
