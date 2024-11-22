@@ -143,7 +143,7 @@ function setUpBuyTicketListener(){
   //loads the interactivity of the buy ticket button
   document.addEventListener('click', async (event) => {
     if (event.target.classList.contains('buy-ticket-btn')) {
-        const raffleId = event.target.dataset.raffleId;
+        const raffleId = event.target.dataset.raffleId; // accepts input from data-raffle-id="${raffleId}" above
         const accounts = await web3.eth.getAccounts();
         const account = accounts[0];
 
