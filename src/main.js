@@ -4,6 +4,7 @@ import { web3, initWeb3 } from './web3/web3Init.js';
 import { getRaffleCount } from './web3/getRaffleCount.js';
 import { getRaffleDetails } from './web3/getRaffleDetails.js';
 import { createRaffle } from './web3/createRaffle.js';
+import { buyTicket } from './web3/ticketActions.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
   await initWeb3();
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   await loadRaffles();
+  setUpBuyTicketListener(); //loads the buy ticket button functionality
   setInterval(updateTimeRemaining, 1000); // Update countdowns every second
 });
 
@@ -134,5 +136,31 @@ function updateTimeRemaining() {
   document.querySelectorAll('.time-remaining').forEach(span => {
     const deadline = span.dataset.deadline;
     span.textContent = calculateTimeRemaining(deadline);
+  });
+}
+
+function setUpBuyTicketListener(){
+  //loads the interactivity of the buy ticket button
+  document.addEventListener('click', async (event) => {
+    if (event.target.classList.contains('buy-ticket-btn')) {
+        const raffleId = event.target.dataset.raffleId;
+        const accounts = await web3.eth.getAccounts();
+        const account = accounts[0];
+
+        try {
+            // get raffle details
+            const raffleDetails = await getRaffleDetails(raffleId);
+            const entryFee = raffleDetails.entryFee;
+            console.log(`Buying ticket for Raffle ID: ${raffleId}, Entry Fee: ${entryFee}`);
+            // Use the buyTicket function from ticketActions.js
+            const receipt = await buyTicket(raffleId, entryFee, account);
+
+            alert('Ticket purchased successfully!'); //pops out alert box on page
+            console.log('Transaction Receipt:', receipt);
+        } catch (error) {
+            console.error('Error purchasing ticket:', error);
+            alert('Failed to purchase ticket.');
+        }
+    }
   });
 }
