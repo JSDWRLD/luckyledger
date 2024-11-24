@@ -3,7 +3,7 @@ const Web3 = require('web3').default;
 // Web3 and Contract Setup
 const web3 = new Web3("http://127.0.0.1:8545");
 const contractABI = require('../../build/contracts/Lottery.json').abi;
-const contractAddress = "0x86dce17e8cf6e3af80d622753cfbdea7886e18b1";
+const contractAddress = "0x8c7bfd1f3b424db6a4e7dc7ca70daf7898279fbd";
 const raffleContract = new web3.eth.Contract(contractABI, contractAddress);
 
 async function createRaffle(entryFee, duration, account) {
@@ -31,9 +31,9 @@ async function populateRaffles() {
 
         console.log("Populating Raffles...");
 
-        const entryFee = web3.utils.toWei("1", "ether"); // Set entry fee to 1 ETH
-        const duration = 60 * 60 * 24; // 1 day duration
-
+        const entryFee = web3.utils.toWei("1", "ether"); 
+        const duration = 60 * 5 * 1; 
+        
         // Loop to create 3 raffles
         for (let i = 1; i <= 3; i++) {
             console.log(`Creating raffle ${i}...`);

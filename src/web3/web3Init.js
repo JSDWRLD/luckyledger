@@ -5,7 +5,7 @@ export let web3;
 export let raffleContract;
 
 // Replace with your deployed contract address
-const raffleAddress = "0x86dcE17E8cf6E3af80d622753cfBDeA7886e18B1";
+const raffleAddress = "0x8c7bfd1f3b424db6a4e7dc7ca70daf7898279fbd";
 
 export async function initWeb3() {
     if (window.ethereum) {

@@ -97,7 +97,13 @@ contract Lottery {
     // Modified drawWinner with host's 20% cut for winningss
     function drawWinner(uint256 _raffleId) external raffleActive(_raffleId) raffleExpired(_raffleId) onlyHost(_raffleId) {
         Raffle storage raffle = raffles[_raffleId];
-        require(raffle.participants.length > 0, "No participants in the raffle");
+
+        if (raffle.participants.length == 0) {
+            // No participants, deactivate the raffle
+            raffle.isActive = false;
+            emit WinnerDrawn(_raffleId, address(0), 0); // No winner, prize is 0
+            return;
+        }
 
         // Pick a random winner
         uint256 winnerIndex = random(raffle.participants.length);
@@ -120,7 +126,6 @@ contract Lottery {
         raffle.isActive = false;
         delete raffle.participants;
     }
-
 
     // Get details of a raffle
     function getRaffleDetails(uint256 _raffleId) external view returns (address host, uint256 entryFee, uint256 prizePool, uint256 ticketCount, uint256 deadline, bool isActive) {
