@@ -25,10 +25,10 @@ export async function endRaffle(raffleId, account) {
         const winner = winnerEvent.returnValues.winner;
         const prize = winnerEvent.returnValues.prize;
 
-        console.log(`Winner: ${winner}, Prize: ${prize}`);
+        alert(`Winner: ${winner}, Prize: ${prize}`);
 
         // Broadcast winner to the modal
-        broadcastWinnerToModal(raffleId, winner, prize);
+        // broadcastWinnerToModal(raffleId, winner, prize);
 
         return receipt;
     } catch (error) {

@@ -1,3 +1,4 @@
+/* Base and Utility Imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Link Styles */
 a {
   @apply font-semibold text-gold;
 }
@@ -39,6 +41,7 @@ main {
   margin-top: 6rem; /* Adjust based on header height */
 }
 
+/* General Body Styles */
 body {
   @apply m-0 items-center justify-center min-h-screen bg-darkGray text-white font-sans antialiased;
 }
@@ -47,6 +50,7 @@ body {
   background-color: #333333;
 }
 
+/* Button Styles */
 button {
   @apply rounded-lg px-4 py-2 font-semibold transition-colors duration-300;
 }
@@ -58,13 +62,63 @@ button:focus-visible {
   @apply outline-none ring-4 ring-offset-2 ring-gold;
 }
 
+/* Logo Styling */
 .logo {
   @apply h-20 transition-transform duration-300 transform hover:scale-105;
 }
 
+/* Card Styles */
 .biggest-raffle-card {
   @apply bg-darkGreen p-8 rounded-lg shadow-lg text-white border-4 border-gold;
 }
 .other-raffles .raffle-card {
   @apply bg-darkGreen p-6 rounded-lg shadow-lg text-white border-4 border-gold;
+}
+
+/* Specific Styling for About Us Page */
+.about-us-title {
+  @apply text-gold text-3xl font-extrabold text-center mt-16 mb-6;
+}
+
+.about-us-content {
+  @apply text-white text-lg leading-relaxed max-w-4xl mx-auto p-6;
+  background-color: #2a2a2a; /* Slightly lighter than darkGray for contrast */
+  border: 1px solid #444; /* Subtle border for definition */
+  border-radius: 8px;
+}
+
+.team-section {
+  @apply text-center mt-12;
+}
+
+.team-title {
+  @apply text-gold text-2xl font-bold mb-4;
+}
+
+.team-list {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto p-6 max-w-6xl;
+}
+
+.team-member {
+  @apply bg-darkGreen text-white rounded-lg shadow-md p-4 text-center;
+  border: 2px solid #ffcc00; /* Matches gold */
+}
+
+.team-member:hover {
+  @apply scale-105 transform transition-transform duration-300;
+}
+
+.team-member span {
+  @apply text-lg font-semibold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-us-content {
+    @apply p-4 text-base;
+  }
+
+  .team-list {
+    @apply grid-cols-1;
+  }
 }

@@ -4,15 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - LuckyLedger Lottery</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.24/dist/tailwind.min.css" rel="stylesheet">
+  <title>About Us: LuckyLedger</title>
+  <link href="./src/style.css" rel="stylesheet">
   <script type="module" src="/src/main.js"></script>
 </head>
 
-<body class="bg-gray-900 text-white font-sans leading-relaxed">
-
-  <!-- Header -->
-  <header class="w-full p-6 bg-darkGreen text-white shadow-md fixed top-0 left-0 right-0 z-50">
+<body class="bg-darkGray flex flex-col items-center">
+  <header class="w-full block p-6 bg-darkGreen text-white shadow-md">
     <div class="flex justify-between items-center max-w-6xl mx-auto">
       <!-- Dropdown and Hamburger Menu -->
       <div class="relative inline-block">
@@ -22,73 +20,64 @@
           </svg>
         </button>
         <div id="dropdownMenu" class="dropdown hidden absolute bg-darkGreen text-white rounded-lg shadow-lg mt-2 z-10">
-          <a href="/about.html" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">About Us</a>
+          <a href="/about.html" class="block px-4 py-2 hover:bg-gold hover:text-darkGreen transition-colors">About
+            Us</a>
         </div>
       </div>
-      <img src="fulllogo.png" alt="Company Logo" class="logo mx-auto transition-transform duration-300 transform hover:scale-105">
+      <img src="fulllogo.png" alt="Company Logo"
+        class="logo mx-auto transition-transform duration-300 transform hover:scale-105">
       <div class="flex items-center space-x-4">
-        <button id="viewRafflesButton" class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-white hover:text-gold">
+        <button id="viewRafflesButton"
+          class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-white hover:text-gold">
           View Raffles
         </button>
-        <button id="openCreateRaffleModalButton" class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md">
+        <button id="openCreateRaffleModalButton"
+          class="bg-gold text-darkGreen px-6 py-2 rounded-lg font-semibold shadow-md">
           Create Raffle
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Large Spacer for Adjustment -->
-  <div class="h-48"></div> <!-- Spacer with 12rem height (192px) to ensure content isn't blocked -->
+  <!-- Main Content -->
+  <main class="mt-4 px-6 text-center">
+    <!-- About Us Section -->
+    <h1 class="text-gold text-3xl font-extrabold mb-4">About Us</h1>
+    <p class="text-lg leading-relaxed text-white max-w-3xl mx-auto mb-8">
+      LuckyLedger is a dedicated Dapp that focuses on ensuring fair results and hosting of raffle-style lotteries. The
+      team created this to provide a platform where people can host and circulate money among a community. This is
+      accomplished by removing the need to pay taxes on big rewards, avoiding malicious actors, and creating trust
+      through smart contracts.
+      <br><br>
+      The Dapp allows users to host their own raffles: setting the ticket fee, duration of the raffle, and the ticket
+      limit. As more users buy tickets, the pot grows until a winner is chosen when the timer reaches zero. When a
+      winner is drawn, the host gets 20% of the pot, and the rest goes to the winner, facilitated by our smart contract.
+    </p>
 
-  <!-- About Us Section -->
-  <section class="about-us-section bg-gray-900 text-white py-12 px-6 mt-8">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-4xl font-extrabold text-center text-gold mb-8">About Us</h1>
-
-      <p class="text-lg mb-6 leading-relaxed">
-        Welcome to LuckyLedger Lottery! We are a decentralized lottery platform powered by blockchain technology,
-        offering transparent, secure, and fair raffles. Our goal is to create an exciting experience for lottery
-        enthusiasts while ensuring that all participants have a fair chance of winning.
-      </p>
-
-      <p class="text-lg mb-8">
-        Our platform is built with a focus on:
-      </p>
-
-      <ul class="list-disc list-inside space-y-4 text-lg">
-        <li>Decentralization: Every raffle is fully transparent and managed through smart contracts.</li>
-        <li>Security: Your funds are protected through blockchain technology and smart contract auditing.</li>
-        <li>Fairness: Each participant has an equal chance of winning, with verifiable randomness.</li>
-      </ul>
-
-      <h2 class="text-3xl font-extrabold text-center text-gold mt-12 mb-6">Our Team</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="team-member text-center p-6 bg-darkGreen rounded-lg shadow-lg hover:shadow-2xl transition-all">
-          <img src="team-member-1.jpg" alt="Team Member 1" class="w-32 h-32 mx-auto rounded-full mb-4">
-          <h3 class="text-xl font-semibold mb-2">John Doe</h3>
-          <p class="text-lg">Founder & CEO</p>
-        </div>
-        <div class="team-member text-center p-6 bg-darkGreen rounded-lg shadow-lg hover:shadow-2xl transition-all">
-            <img src="team-member-1.jpg" alt="Team Member 1" class="w-32 h-32 mx-auto rounded-full mb-4">
-            <h3 class="text-xl font-semibold mb-2">John Doe</h3>
-            <p class="text-lg">Founder & CEO</p>
-        </div>
-        <div class="team-member text-center p-6 bg-darkGreen rounded-lg shadow-lg hover:shadow-2xl transition-all">
-            <img src="team-member-1.jpg" alt="Team Member 1" class="w-32 h-32 mx-auto rounded-full mb-4">
-            <h3 class="text-xl font-semibold mb-2">John Doe</h3>
-            <p class="text-lg">Founder & CEO</p>
-        </div>
-      </div>
+    <!-- Meet the Team Section -->
+    <h1 class="text-gold text-3xl font-extrabold mt-8 mb-4">Meet the Team</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+      <span class="bg-darkGreen text-white p-4 rounded-lg shadow-lg border-2 border-gold text-center">
+        <strong>John Doe</strong> - Team Lead and Main Fullstack Developer <br>
+        <em>4th-year Computer Science student pursuing a Bachelor's degree</em>
+      </span>
+      <span class="bg-darkGreen text-white p-4 rounded-lg shadow-lg border-2 border-gold text-center">
+        <strong>Cameron Lanzaro</strong> - Lead Front-End Developer and Tester <br>
+        <em>4th-year Computer Science student pursuing a Bachelor's degree</em>
+      </span>
+      <span class="bg-darkGreen text-white p-4 rounded-lg shadow-lg border-2 border-gold text-center">
+        <strong>Enrique De La Torre</strong> - Main Tester and Diagram Specialist <br>
+        <em>4th-year Computer Science student pursuing a Bachelor's degree</em>
+      </span>
+      <span class="bg-darkGreen text-white p-4 rounded-lg shadow-lg border-2 border-gold text-center">
+        <strong>Daniel Espinoza Diaz</strong> - Main Documenter and Assistant Developer <br>
+        <em>4th-year Computer Science student pursuing a Bachelor's degree</em>
+      </span>
+      <span class="bg-darkGreen text-white p-4 rounded-lg shadow-lg border-2 border-gold text-center">
+        <strong>Andrew Lawson</strong> - Assistant Documenter and Assistant Developer <br>
+        <em>4th-year Computer Science student pursuing a Bachelor's degree</em>
+      </span>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="w-full text-white py-6 mt-40">
-    <div class="text-center">
-      <p>&copy; 2024 LuckyLedger Lottery. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-</body>
+  </main>
 
 </html>
