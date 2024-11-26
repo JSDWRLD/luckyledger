@@ -10,6 +10,22 @@ A decentralized lottery application built on Ethereum using **Solidity**, **Java
 - **Automatic Award Distribution**: Winners will be chosen randomly and prizes will be disbursed automatically.
 - **Web3 Integration**: Interacts with the Ethereum blockchain using Web3.js.
 
+## System Design
+
+This is a representation of how actors will interface with this decentralized application.
+![System Design](https://github.com/JSDWRLD/luckyledger/blob/main/repositoryPhotos/SystemDesign.png)
+
+## Images and Video Demo
+
+This is the main homepage where users will see all raffles.
+![Main Screen](https://github.com/JSDWRLD/luckyledger/blob/main/repositoryPhotos/main.png)
+
+This is the other raffles section, which display smaller prizes.
+![Other Raffles](https://github.com/JSDWRLD/luckyledger/blob/main/repositoryPhotos/otherraffles.png)
+
+Video Demo, hosted on Streamable:
+[Video Demo](https://streamable.com/g7f00t)
+
 ## Installation
 
 ### Prerequisites
@@ -17,7 +33,7 @@ A decentralized lottery application built on Ethereum using **Solidity**, **Java
 - **Node.js** 
 - **npm** 
 - **Ganache** 
-- **Truffle** 
+- **Truffle**
 
 ### 1. Clone the Repository
 
