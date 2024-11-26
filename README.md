@@ -16,8 +16,8 @@ A decentralized lottery application built on Ethereum using **Solidity**, **Java
 
 - **Node.js** 
 - **npm** 
-- **Ganache** (for local Ethereum testing, optional for development)
-- **Truffle** (if you're using Truffle to deploy your contracts)
+- **Ganache** 
+- **Truffle** 
 
 ### 1. Clone the Repository
 
