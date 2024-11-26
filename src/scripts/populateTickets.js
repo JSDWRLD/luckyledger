@@ -21,7 +21,7 @@ async function buyRandomTicketsForRaffle(raffleId, entryFee, accounts) {
                 console.log(`Account ${account} purchasing ticket ${j + 1} of ${ticketCount} for Raffle ID ${raffleId}...`);
                 const receipt = await raffleContract.methods
                     .buyTicket(raffleId)
-                    .send({ from: account, value: entryFee, gas: 500000, gasPrice:web3.utils.toWei('20', 'gwei')});
+                    .send({ from: account, value: entryFee, gas: 500000, gasPrice: web3.utils.toWei('20', 'gwei')});
                 console.log(`Ticket ${j + 1} purchased by Account ${account} for Raffle ID ${raffleId}:`, receipt.transactionHash);
             } catch (error) {
                 console.error(`Error purchasing ticket ${j + 1} for Raffle ID ${raffleId} by Account ${account}:`, error);
