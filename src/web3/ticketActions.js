@@ -27,9 +27,6 @@ export async function endRaffle(raffleId, account) {
 
         alert(`Winner: ${winner}, Prize: ${prize}`);
 
-        // Broadcast winner to the modal
-        // broadcastWinnerToModal(raffleId, winner, prize);
-
         return receipt;
     } catch (error) {
         console.error("Error ending raffle:", error);
@@ -37,6 +34,7 @@ export async function endRaffle(raffleId, account) {
     }
 }
 
+// Not used at the moment. 
 function broadcastWinnerToModal(raffleId, winner, prize) {
     const winnerModal = document.getElementById('winnerModal');
     const modalContent = winnerModal.querySelector('.modal-content');
