@@ -14,7 +14,7 @@ async function createRaffle(entryFee, duration, account) {
 
         const receipt = await raffleContract.methods
             .createRaffle(entryFee, duration)
-            .send({ from: account, gas: 500000 });
+            .send({ from: account, gas: 500000, gasPrice:web3.utils.toWei('20', 'gwei')});
 
         console.log("Raffle created successfully:", receipt);
         return receipt;
