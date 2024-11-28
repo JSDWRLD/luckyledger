@@ -85,7 +85,7 @@ Fill in these details:
 
 
 ### 6. Compile and Migrate solidity contract onto Local Blockchain
-
+Open a new terminal and while ganache-cli is running:
 ```bash
 truffle compile
 truffle migrate --reset
