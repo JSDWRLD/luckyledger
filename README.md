@@ -30,8 +30,7 @@ Video Demo, hosted on Streamable:
 
 ### Prerequisites
 
-- **Node.js** 
-- **npm** 
+- **Node** 
 - **Ganache** 
 - **Truffle**
 
