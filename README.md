@@ -26,6 +26,13 @@ This is the other raffles section, which display smaller prizes.
 Video Demo, hosted on Streamable:
 [Video Demo](https://streamable.com/g7f00t)
 
+## Team
+- Myself: Fullstack Developer, Solidity Smart Contract, Web3.js
+- Andrew Lawson: HTML, CSS, Documentation
+- Cameron Lanzaro: Tester, Documentation, Bug Fix
+- Enrique De La Torre: Tester, Documentation
+- Daniel Espinoza: Tester, Documentation
+
 ## Installation
 
 ### Prerequisites
